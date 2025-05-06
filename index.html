@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Chew Fan Yee – Cyber Security Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -19,31 +19,19 @@
       padding: 2rem;
       text-align: center;
     }
-    main {
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem;
-    }
-    section {
-      margin-bottom: 2rem;
-    }
-    h1, h2 {
-      color: #111827;
-    }
     h1 {
       font-size: 2rem;
+      color: white;
     }
     h2 {
       font-size: 1.5rem;
       border-bottom: 2px solid #e5e7eb;
       padding-bottom: 0.5rem;
       margin-top: 2rem;
+      color: #111827;
     }
     ul {
       padding-left: 1.5rem;
-    }
-    .contact {
-      margin-top: 1rem;
     }
     footer {
       text-align: center;
@@ -51,67 +39,148 @@
       background-color: #e5e7eb;
       font-size: 0.875rem;
     }
+
+    /* Two-column layout */
+    .grid-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .left-column, .right-column {
+      flex: 1;
+      min-width: 300px;
+    }
+    .right-column {
+      background-color: #f9fafb;
+      padding: 1.5rem;
+      border-left: 2px solid #e5e7eb;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1 style="color: white;">Chew Fan Yee – Cyber Security Portfolio</h1>
+    <h1>Chew Fan Yee – Cyber Security Portfolio</h1>
     <p>Email: fan.yee.chew@gmail.com | Phone: +60183123771 | Kuala Lumpur, Malaysia</p>
   </header>
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>I’m a confident and bold problem solver with a background in cyber security, system deployment, and IT operations. I specialize in network security, vulnerability assessment, and ethical hacking, with hands-on experience from academic and internship projects. I thrive in team environments, value discipline, and aim to build secure, efficient digital systems.</p>
-    </section>
 
-    <section>
-      <h2>Education</h2>
-      <p><strong>BSc (Hons) in Computer Science (Cyber Security)</strong><br>
-         Asia Pacific University<br>
-         June 2021 – May 2024</p>
-      <ul>
-        <li>Studied cryptography, malware analysis, ethical hacking, and risk assessment.</li>
-        <li><strong>Final Year Project:</strong> Developed a security application integrating real-world threat mitigation techniques.</li>
-      </ul>
-    </section>
+  <main class="grid-container">
+    <div class="left-column">
+      <section>
+        <h2>About Me</h2>
+        <p>I’m a confident and bold problem solver with a background in cyber security, system deployment, and IT operations. I specialize in network security, vulnerability assessment, and ethical hacking, with hands-on experience from academic and internship projects.</p>
+      </section>
 
-    <section>
-      <h2>Experience</h2>
-      <p><strong>Intern, IT Department – TURCOMP BMB SDN BHD</strong><br>
-         May 2023 – September 2023</p>
-      <ul>
-        <li>Supported software deployment for eWMS, ERP, and SMS platforms.</li>
-        <li>Maintained and assisted with eCommerce and Lapasar systems.</li>
-        <li>Gained experience in troubleshooting, integration, and system support across departments.</li>
-      </ul>
-    </section>
+      <section>
+        <h2>Education</h2>
+        <p><strong>BSc (Hons) in Computer Science (Cyber Security)</strong><br>
+           Asia Pacific University<br>
+        </p>
+        <ul>
+          <li>Studied cryptography, malware analysis, ethical hacking, and risk assessment.</li>
+          <li><strong>Final Year Project:</strong> Developed a security application integrating real-world threat mitigation techniques.</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Projects</h2>
-      <p><strong>Security Application (Final Year Project)</strong></p>
-      <ul>
-        <li>Designed and implemented a security tool addressing real-world cyber threats.</li>
-        <li>Integrated cryptographic protocols and vulnerability scanning features.</li>
-        <li>Applied ethical hacking methodologies and secure coding practices.</li>
-      </ul>
-    </section>
+      <section>
+        <h2>Experience</h2>
+        <p><strong>Intern, IT Department</strong><br>
+           TURCOMP BMB SDN BHD<br>
+        </p>
+        <ul>
+          <li>Supported software deployment for eWMS, ERP, and SMS platforms.</li>
+          <li>Maintained and assisted with eCommerce and Lapasar systems.</li>
+          <li>Gained experience in troubleshooting, integration, and system support across departments.</li>
+        </ul>
+      </section>
 
-    <section>
-      <h2>Skills</h2>
-      <ul>
-        <li><strong>Technical:</strong> Network Security, Cryptography, Malware Analysis, Vulnerability Assessment, Penetration Testing</li>
-        <li><strong>Soft Skills:</strong> Critical Thinking, Communication, Teamwork, Organization, Time Management</li>
-        <li><strong>Languages:</strong> English, Chinese, Malay</li>
-      </ul>
-    </section>
+      <section>
+        <h2>Skills</h2>
+        <ul>
+          <li><strong>Technical:</strong> Network Security, Cryptography, Malware Analysis, Vulnerability Assessment, Penetration Testing</li>
+          <li><strong>Soft Skills:</strong> Critical Thinking, Communication, Teamwork, Organization, Time Management</li>
+          <li><strong>Languages:</strong> English, Chinese, Malay</li>
+        </ul>
+      </section>
 
-    <section class="contact">
-      <h2>Contact</h2>
-      <p>Email: fan.yee.chew@gmail.com<br>
-         Phone: +60183123771<br>
-         Location: Kuala Lumpur, Malaysia</p>
-    </section>
+      <section class="contact">
+        <h2>Contact</h2>
+        <p>Email: fan.yee.chew@gmail.com<br>
+           Phone: +60183123771<br>
+           Location: Kuala Lumpur, Malaysia</p>
+      </section>
+    </div>
+
+    <div class="right-column">
+      <section>
+        <h2>Past Projects</h2>
+        <ul>
+<section>
+  <h2>Secure Password Generator</h2>
+  <p>This is a Final Year Project designed to help users create strong, random passwords with selectable options. It’s built using HTML, CSS, and JavaScript.</p>
+
+  <!-- Password Generator UI -->
+  <div style="background:#fff; border:1px solid #ccc; padding:1rem; border-radius:6px; margin-top:1rem;">
+    <label>Password Length: <input type="number" id="length" value="12" min="4" max="64" /></label><br/><br/>
+    <label><input type="checkbox" id="lowercase" checked /> Include lowercase</label><br/>
+    <label><input type="checkbox" id="uppercase" checked /> Include uppercase</label><br/>
+    <label><input type="checkbox" id="numbers" checked /> Include numbers</label><br/>
+    <label><input type="checkbox" id="symbols" checked /> Include symbols</label><br/><br/>
+
+    <button onclick="generatePassword()">Generate Password</button><br/><br/>
+    <input type="text" id="result" readonly style="width:100%; padding:0.5rem;" />
+  </div>
+
+  <p style="font-size: 0.9rem; color: #6b7280; margin-top: 1rem;">
+    Built by Chew Fan Yee. <a href="https://github.com/Nickbaka/Password-Generator/blob/main/CHEW%20FAN%20YEE_TP060853_FYP_Documentation.docx" target="_blank" rel="noopener">
+  Full Documentation (Download)
+</a>
+
+  </p>
+
+  <script>
+    function generatePassword() {
+      const length = document.getElementById("length").value;
+      const hasLower = document.getElementById("lowercase").checked;
+      const hasUpper = document.getElementById("uppercase").checked;
+      const hasNumber = document.getElementById("numbers").checked;
+      const hasSymbol = document.getElementById("symbols").checked;
+
+      const lower = "abcdefghijklmnopqrstuvwxyz";
+      const upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+      const number = "0123456789";
+      const symbol = "!@#$%^&*()_+{}[]|:;<>,.?/~`-=";
+
+      let allChars = "";
+      if (hasLower) allChars += lower;
+      if (hasUpper) allChars += upper;
+      if (hasNumber) allChars += number;
+      if (hasSymbol) allChars += symbol;
+
+      let password = "";
+      for (let i = 0; i < length; i++) {
+        password += allChars.charAt(Math.floor(Math.random() * allChars.length));
+      }
+
+      document.getElementById("result").value = password;
+    }
+  </script>
+</section>
+
+
+          <li><strong>Wi-Fi Vulnerability Scanner (Solo Project)</strong><br>
+            A Python-based scanner that identifies weak wireless encryption protocols nearby.</li>
+          <li><strong>Secure File Transfer Tool</strong><br>
+            Built using AES encryption for secure file transfers between peers.</li>
+          <li><strong>Ethical Hacking Workshop Materials</strong><br>
+            Created slides and labs for an introductory ethical hacking session.</li>
+        </ul>
+      </section>
+    </div>
   </main>
+
   <footer>
     &copy; 2025 Chew Fan Yee. All rights reserved.
   </footer>
