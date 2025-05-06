@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Chew Fan Yee – Cyber Security Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     body {
       font-family: 'Inter', sans-serif;
@@ -29,6 +30,11 @@
       padding-bottom: 0.5rem;
       margin-top: 2rem;
       color: #111827;
+    }
+    h3 {
+      font-size: 1.25rem;
+      margin-top: 1.5rem;
+      color: #374151;
     }
     ul {
       padding-left: 1.5rem;
@@ -58,6 +64,123 @@
       padding: 1.5rem;
       border-left: 2px solid #e5e7eb;
     }
+
+    /* Collapsible Project Styles */
+    .project {
+      margin-bottom: 1rem;
+      border: 1px solid #e5e7eb;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .project-header {
+      background-color: #f3f4f6;
+      padding: 0.75rem 1rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+    }
+    .project-header:hover {
+      background-color: #e5e7eb;
+    }
+    .project-content {
+      padding: 1rem;
+      background-color: #fff;
+      display: none;
+    }
+    .project-content.active {
+      display: block;
+    }
+    .toggle-icon {
+      font-size: 1.25rem;
+      font-weight: bold;
+      transition: transform 0.3s ease;
+    }
+    .rotate {
+      transform: rotate(180deg);
+    }
+    
+    /* Password Generator Styles */
+    .password-generator {
+      background:#fff;
+      border:1px solid #ccc;
+      padding:1rem;
+      border-radius:6px;
+      margin-top:1rem;
+    }
+    .password-generator button {
+      background-color: #1f2937;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+    }
+    .password-generator button:hover {
+      background-color: #374151;
+    }
+    .password-generator input[type="text"], 
+    .password-generator input[type="password"] {
+      width: 100%;
+      padding: 0.5rem;
+      margin-top: 0.5rem;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+    }
+    .password-generator label {
+      margin-bottom: 0.5rem;
+      display: inline-block;
+    }
+    
+    /* Password Strength Styles */
+    .password-strength {
+      margin-top: 2rem;
+      padding: 1rem;
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+    }
+    .pass-strength-text {
+      margin-top: 0.5rem;
+      font-weight: 600;
+      padding: 0.5rem;
+      background-color: #f3f4f6;
+      border-radius: 4px;
+      text-align: center;
+    }
+    .revolving-text {
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: #6b7280;
+    }
+    .revolving-text a {
+      color: #3b82f6;
+      text-decoration: underline;
+    }
+    .tab-container {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+    .tab {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      background-color: #f3f4f6;
+      border: 1px solid #d1d5db;
+      border-bottom: none;
+      border-radius: 4px 4px 0 0;
+    }
+    .tab.active {
+      background-color: #fff;
+      font-weight: 600;
+    }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
   </style>
 </head>
 <body>
@@ -70,7 +193,7 @@
     <div class="left-column">
       <section>
         <h2>About Me</h2>
-        <p>I’m a confident and bold problem solver with a background in cyber security, system deployment, and IT operations. I specialize in network security, vulnerability assessment, and ethical hacking, with hands-on experience from academic and internship projects.</p>
+        <p>I'm a confident and bold problem solver with a background in cyber security, system deployment, and IT operations. I specialize in network security, vulnerability assessment, and ethical hacking, with hands-on experience from academic and internship projects.</p>
       </section>
 
       <section>
@@ -116,31 +239,279 @@
     <div class="right-column">
       <section>
         <h2>Past Projects</h2>
-        <ul>
-<section>
-  <h2>Secure Password Generator</h2>
-  <p>This is a Final Year Project designed to help users create strong, random passwords with selectable options. It’s built using HTML, CSS, and JavaScript.</p>
+        
+        <!-- Secure Password Generator Project -->
+        <div class="project">
+          <div class="project-header" onclick="toggleProject('password-generator')">
+            <span>Secure Password Generator</span>
+            <span class="toggle-icon" id="toggle-password-generator">+</span>
+          </div>
+          <div class="project-content" id="password-generator-content">
+            <p>This is a Final Year Project designed to help users create strong, random passwords with selectable options. It's built using HTML, CSS, and JavaScript.</p>
 
-  <!-- Password Generator UI -->
-  <div style="background:#fff; border:1px solid #ccc; padding:1rem; border-radius:6px; margin-top:1rem;">
-    <label>Password Length: <input type="number" id="length" value="12" min="4" max="64" /></label><br/><br/>
-    <label><input type="checkbox" id="lowercase" checked /> Include lowercase</label><br/>
-    <label><input type="checkbox" id="uppercase" checked /> Include uppercase</label><br/>
-    <label><input type="checkbox" id="numbers" checked /> Include numbers</label><br/>
-    <label><input type="checkbox" id="symbols" checked /> Include symbols</label><br/><br/>
+            <div class="tab-container">
+              <div class="tab active" onclick="showTab('generator-tab', this)">Password Generator</div>
+              <div class="tab" onclick="showTab('strength-tab', this)">Password Strength Checker</div>
+            </div>
 
-    <button onclick="generatePassword()">Generate Password</button><br/><br/>
-    <input type="text" id="result" readonly style="width:100%; padding:0.5rem;" />
-  </div>
+            <!-- Password Generator UI -->
+            <div id="generator-tab" class="tab-content active">
+              <div class="password-generator">
+                <label>Password Length: <input type="number" id="length" value="12" min="4" max="64" /></label><br/><br/>
+                <label><input type="checkbox" id="lowercase" checked /> Include lowercase</label><br/>
+                <label><input type="checkbox" id="uppercase" checked /> Include uppercase</label><br/>
+                <label><input type="checkbox" id="numbers" checked /> Include numbers</label><br/>
+                <label><input type="checkbox" id="symbols" checked /> Include symbols</label><br/><br/>
 
-  <p style="font-size: 0.9rem; color: #6b7280; margin-top: 1rem;">
-    Built by Chew Fan Yee. <a href="https://github.com/Nickbaka/Password-Generator/blob/main/CHEW%20FAN%20YEE_TP060853_FYP_Documentation.docx" target="_blank" rel="noopener">
-  Full Documentation (Download)
-</a>
+                <button onclick="generatePassword()">Generate Password</button><br/><br/>
+                <input type="text" id="result" readonly />
+              </div>
+            </div>
 
-  </p>
+            <!-- Password Strength UI -->
+            <div id="strength-tab" class="tab-content">
+              <div class="password-strength">
+                <h3>Password Strength Assessment Tool</h3>
+                <p>Type in a password to check its strength:</p>
+                <input id="password-check" type="password" />
+                <div class="revolving-text"></div>
+              </div>
+            </div>
 
+            <p style="font-size: 0.9rem; color: #6b7280; margin-top: 1rem;">
+              Built by Chew Fan Yee. <a href="https://github.com/Nickbaka/Password-Generator/blob/main/CHEW%20FAN%20YEE_TP060853_FYP_Documentation.docx" target="_blank" rel="noopener">Full Documentation (Download)</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Wi-Fi Vulnerability Scanner Project -->
+        <div class="project">
+          <div class="project-header" onclick="toggleProject('wifi-scanner')">
+            <span>Wi-Fi Vulnerability Scanner</span>
+            <span class="toggle-icon" id="toggle-wifi-scanner">+</span>
+          </div>
+          <div class="project-content" id="wifi-scanner-content">
+            <p>A Python-based scanner that identifies weak wireless encryption protocols nearby.</p>
+            <h3>Key Features:</h3>
+            <ul>
+              <li>Real-time scanning of wireless networks in proximity</li>
+              <li>Detection of WEP, WPA, and open networks</li>
+              <li>Signal strength analysis and channel mapping</li>
+              <li>Reporting of potential security vulnerabilities</li>
+            </ul>
+            <h3>Technologies Used:</h3>
+            <ul>
+              <li>Python</li>
+              <li>Scapy library for packet manipulation</li>
+              <li>Wireless network interfaces in monitor mode</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Secure File Transfer Tool Project -->
+        <div class="project">
+          <div class="project-header" onclick="toggleProject('file-transfer')">
+            <span>Secure File Transfer Tool</span>
+            <span class="toggle-icon" id="toggle-file-transfer">+</span>
+          </div>
+          <div class="project-content" id="file-transfer-content">
+            <p>Built using AES encryption for secure file transfers between peers.</p>
+            <h3>Key Features:</h3>
+            <ul>
+              <li>End-to-end encryption using AES-256</li>
+              <li>Secure key exchange protocol</li>
+              <li>File integrity verification</li>
+              <li>Transfer resumption capabilities</li>
+              <li>User-friendly interface for non-technical users</li>
+            </ul>
+            <h3>Technologies Used:</h3>
+            <ul>
+              <li>Java</li>
+              <li>JavaFX for the user interface</li>
+              <li>Java Cryptography Extension (JCE)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Ethical Hacking Workshop Materials Project -->
+        <div class="project">
+          <div class="project-header" onclick="toggleProject('workshop')">
+            <span>Ethical Hacking Workshop Materials</span>
+            <span class="toggle-icon" id="toggle-workshop">+</span>
+          </div>
+          <div class="project-content" id="workshop-content">
+            <p>Created slides and labs for an introductory ethical hacking session.</p>
+            <h3>Workshop Content:</h3>
+            <ul>
+              <li>Introduction to ethical hacking principles and methodology</li>
+              <li>Reconnaissance techniques and open-source intelligence</li>
+              <li>Vulnerability scanning using industry tools</li>
+              <li>Basic penetration testing scenarios</li>
+              <li>Hands-on lab exercises for participants</li>
+            </ul>
+            <h3>Target Audience:</h3>
+            <p>Computer science students and IT professionals interested in security fundamentals</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Chew Fan Yee. All rights reserved.
+  </footer>
+
+  <!-- Password Strength Assessment Tool JS -->
   <script>
+    (function($) {
+      var Password = function($object, options) {
+        var defaults = {
+          minimumLength: 4,
+          steps: {
+            15: 'Really insecure password',
+            40: 'Weak; try combining letters & numbers',
+            65: 'Medium; try using special characters',
+            90: 'Strong password'
+          }
+        };
+    
+        options = $.extend({}, defaults, options);
+    
+        function calculateScore(password) {
+          var score = 0;
+    
+          if (password.length < options.minimumLength) {
+            return -1;
+          }
+    
+          score += password.length * 4;
+          score += checkRepetition(1, password).length - password.length;
+          score += checkRepetition(2, password).length - password.length;
+          score += checkRepetition(3, password).length - password.length;
+          score += checkRepetition(4, password).length - password.length;
+    
+          if (password.match(/(.*[0-9].*[0-9].*[0-9])/)) {
+            score += 5;
+          }
+    
+          var symbols = '.*[!,@,#,$,%,^,&,*,?,_,~]';
+          symbols = new RegExp('(' + symbols + symbols + ')');
+          if (password.match(symbols)) {
+            score += 5;
+          }
+    
+          if (password.match(/([a-z].*[A-Z])|([A-Z].*[a-z])/)) {
+            score += 10;
+          }
+    
+          if (password.match(/([a-zA-Z])/) && password.match(/([0-9])/)) {
+            score += 15;
+          }
+    
+          if (password.match(/([!@#$%^&*?_~])/) && password.match(/([0-9])/)) {
+            score += 15;
+          }
+    
+          if (password.match(/([!@#$%^&*?_~])/) && password.match(/([a-zA-Z])/)) {
+            score += 15;
+          }
+    
+          if (password.match(/^\w+$/) || password.match(/^\d+$/)) {
+            score -= 10;
+          }
+    
+          return Math.max(0, Math.min(100, score));
+        }
+    
+        function checkRepetition(length, str) {
+          var res = "", repeated = false;
+          for (var i = 0; i < str.length; i++) {
+            repeated = true;
+            for (var j = 0; j < length && (j + i + length) < str.length; j++) {
+              repeated = repeated && (str.charAt(j + i) === str.charAt(j + i + length));
+            }
+            if (j < length) {
+              repeated = false;
+            }
+            if (repeated) {
+              i += length - 1;
+              repeated = false;
+            } else {
+              res += str.charAt(i);
+            }
+          }
+          return res;
+        }
+    
+        function getScoreText(score) {
+          if (score === -1) {
+            return 'The password is too short';
+          }
+    
+          score = score < 0 ? 0 : score;
+    
+          var sortedStepKeys = Object.keys(options.steps).sort();
+          for (var step of sortedStepKeys) {
+            if (step > score) {
+              return options.steps[step];
+            }
+          }
+    
+          return 'Strong password';
+        }
+    
+        var $strengthText = $('<div>').addClass('pass-strength-text');
+        $object.after($strengthText);
+    
+        $object.on('keyup', function() {
+          var score = calculateScore($object.val());
+          var text = getScoreText(score);
+          $strengthText.text(text);
+        });
+      };
+    
+      $.fn.password = function(options) {
+        return this.each(function() {
+          new Password($(this), options);
+        });
+      };
+    })(jQuery);
+
+    // Function to toggle project visibility
+    function toggleProject(projectId) {
+      const content = document.getElementById(projectId + '-content');
+      const toggleIcon = document.getElementById('toggle-' + projectId);
+      
+      content.classList.toggle('active');
+      toggleIcon.classList.toggle('rotate');
+      
+      if (content.classList.contains('active')) {
+        toggleIcon.textContent = '-';
+      } else {
+        toggleIcon.textContent = '+';
+      }
+    }
+
+    // Function to switch between tabs
+    function showTab(tabId, tabElement) {
+      // Hide all tab contents
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      
+      // Deactivate all tabs
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      
+      // Show the selected tab content
+      document.getElementById(tabId).classList.add('active');
+      
+      // Activate the clicked tab
+      tabElement.classList.add('active');
+    }
+
+    // Password Generator Function
     function generatePassword() {
       const length = document.getElementById("length").value;
       const hasLower = document.getElementById("lowercase").checked;
@@ -159,6 +530,12 @@
       if (hasNumber) allChars += number;
       if (hasSymbol) allChars += symbol;
 
+      // Validate that at least one character type is selected
+      if (allChars === "") {
+        document.getElementById("result").value = "Please select at least one character type";
+        return;
+      }
+
       let password = "";
       for (let i = 0; i < length; i++) {
         password += allChars.charAt(Math.floor(Math.random() * allChars.length));
@@ -166,23 +543,29 @@
 
       document.getElementById("result").value = password;
     }
+
+    // Initialize password strength checker and revolving text
+    $(document).ready(function() {
+      $('#password-check').password();
+
+      var links = [
+        'https://www.nist.gov/password-guidance',
+        'https://www.cisa.gov/password-security',
+        'https://www.sans.org/password-protection'
+      ];
+
+      var currentIndex = 0;
+      var $revolvingText = $('.revolving-text');
+
+      function displayNextLink() {
+        var link = links[currentIndex];
+        $revolvingText.html('<a href="' + link + '" target="_blank">Resource: ' + link + '</a>');
+        currentIndex = (currentIndex + 1) % links.length;
+      }
+
+      displayNextLink(); // Show first link immediately
+      setInterval(displayNextLink, 5000); // Change link every 5 seconds
+    });
   </script>
-</section>
-
-
-          <li><strong>Wi-Fi Vulnerability Scanner (Solo Project)</strong><br>
-            A Python-based scanner that identifies weak wireless encryption protocols nearby.</li>
-          <li><strong>Secure File Transfer Tool</strong><br>
-            Built using AES encryption for secure file transfers between peers.</li>
-          <li><strong>Ethical Hacking Workshop Materials</strong><br>
-            Created slides and labs for an introductory ethical hacking session.</li>
-        </ul>
-      </section>
-    </div>
-  </main>
-
-  <footer>
-    &copy; 2025 Chew Fan Yee. All rights reserved.
-  </footer>
 </body>
 </html>
