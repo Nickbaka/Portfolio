@@ -100,7 +100,7 @@
     .rotate {
       transform: rotate(180deg);
     }
-    
+
     /* Password Generator Styles */
     .password-generator {
       background:#fff;
@@ -133,7 +133,7 @@
       margin-bottom: 0.5rem;
       display: inline-block;
     }
-    
+
     /* Password Strength Styles */
     .password-strength {
       margin-top: 2rem;
@@ -239,7 +239,7 @@
     <div class="right-column">
       <section>
         <h2>Past Projects</h2>
-        
+
         <!-- Secure Password Generator Project -->
         <div class="project">
           <div class="project-header" onclick="toggleProject('password-generator')">
@@ -349,10 +349,10 @@
     function toggleProject(projectId) {
       const content = document.getElementById(projectId + '-content');
       const toggleIcon = document.getElementById('toggle-' + projectId);
-      
+
       content.classList.toggle('active');
       toggleIcon.classList.toggle('rotate');
-      
+
       if (content.classList.contains('active')) {
         toggleIcon.textContent = '-';
       } else {
