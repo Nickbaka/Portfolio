@@ -134,53 +134,6 @@
       display: inline-block;
     }
 
-    /* Password Strength Styles */
-    .password-strength {
-      margin-top: 2rem;
-      padding: 1rem;
-      background-color: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 6px;
-    }
-    .pass-strength-text {
-      margin-top: 0.5rem;
-      font-weight: 600;
-      padding: 0.5rem;
-      background-color: #f3f4f6;
-      border-radius: 4px;
-      text-align: center;
-    }
-    .revolving-text {
-      margin-top: 1rem;
-      font-size: 0.875rem;
-      color: #6b7280;
-    }
-    .revolving-text a {
-      color: #3b82f6;
-      text-decoration: underline;
-    }
-    .tab-container {
-      display: flex;
-      margin-bottom: 1rem;
-    }
-    .tab {
-      padding: 0.5rem 1rem;
-      cursor: pointer;
-      background-color: #f3f4f6;
-      border: 1px solid #d1d5db;
-      border-bottom: none;
-      border-radius: 4px 4px 0 0;
-    }
-    .tab.active {
-      background-color: #fff;
-      font-weight: 600;
-    }
-    .tab-content {
-      display: none;
-    }
-    .tab-content.active {
-      display: block;
-    }
   </style>
 </head>
 <body>
@@ -240,14 +193,14 @@
       <section>
         <h2>Past Projects</h2>
 
-        <!-- Secure Password Generator Project -->
+        <!-- Password Generator -->
         <div class="project">
           <div class="project-header" onclick="toggleProject('password-generator')">
             <span>Secure Password Generator</span>
             <span class="toggle-icon" id="toggle-password-generator">+</span>
           </div>
           <div class="project-content" id="password-generator-content">
-            <p>This is a Final Year Project designed to help users create strong, random passwords with selectable options. It's built using HTML, CSS, and JavaScript.</p>
+            <p>This is a small side project demo designed to help users create strong, random passwords with selectable options. It's built using purely HTML, and the code snippet can be viewed by inspecting this webpage.</p>
 
             <!-- Password Generator UI -->
             <div class="password-generator">
@@ -260,59 +213,57 @@
               <button onclick="generatePassword()">Generate Password</button><br/><br/>
               <input type="text" id="result" readonly />
             </div>
-
-            <p style="font-size: 0.9rem; color: #6b7280; margin-top: 1rem;">
-              Built by Chew Fan Yee. <a href="https://github.com/Nickbaka/Password-Generator/blob/main/CHEW%20FAN%20YEE_TP060853_FYP_Documentation.docx" target="_blank" rel="noopener">Full Documentation (Download)</a>
-            </p>
           </div>
         </div>
 
-        <!-- Wi-Fi Vulnerability Scanner Project -->
+        <!-- APAST -->
         <div class="project">
-          <div class="project-header" onclick="toggleProject('wifi-scanner')">
-            <span>Wi-Fi Vulnerability Scanner</span>
-            <span class="toggle-icon" id="toggle-wifi-scanner">+</span>
+          <div class="project-header" onclick="toggleProject('APAST')">
+            <span>Advanced Password Strength Assessment Tool</span>
+            <span class="toggle-icon" id="toggle-APAST">+</span>
           </div>
-          <div class="project-content" id="wifi-scanner-content">
-            <p>A Python-based scanner that identifies weak wireless encryption protocols nearby.</p>
-            <h3>Key Features:</h3>
+          <div class="project-content" id="APAST-content">
+            <p>This FYP project addresses the growing need for robust password security in an increasingly digital world. It aims to empower users by providing a comprehensive solution that enhances their ability to create and maintain strong passwords, thereby mitigating cybersecurity risks.</p>
+            <h3>Objective:</h3>
+            <p>The primary objective of the project is to develop a user-friendly application that facilitates password strength assessment. Specific goals include creating an intuitive interface, implementing advanced algorithms for accurate evaluations, and promoting user education on secure password practices.</p>
+            <h3>Key Components:</h3>
             <ul>
-              <li>Real-time scanning of wireless networks in proximity</li>
-              <li>Detection of WEP, WPA, and open networks</li>
-              <li>Signal strength analysis and channel mapping</li>
-              <li>Reporting of potential security vulnerabilities</li>
+              <li><strong>Real-Time Password Strength Evaluation:</strong> Users can input their passwords to receive immediate feedback on strength levels.</li>
+              <li><strong>Personalized Recommendations:</strong> The tool analyzes weaknesses in passwords and provides tailored suggestions for improvement.</li>
+              <li><strong>Educational Resources:</strong> A revolving set of links to password security best practices and informative materials is available to enhance user awareness.</li>
+              <li><strong>User-Friendly Interface:</strong> Designed with accessibility in mind, the interface is intuitive for users of varying technical expertise.</li>
             </ul>
-            <h3>Technologies Used:</h3>
-            <ul>
-              <li>Python</li>
-              <li>Scapy library for packet manipulation</li>
-              <li>Wireless network interfaces in monitor mode</li>
-            </ul>
+            <h3>Outcome:</h3>
+            <p>The project successfully delivers a functional and effective password strength assessment tool that not only evaluates password security but also educates users on best practices. This outcome contributes to enhanced digital security awareness and encourages users to adopt stronger password habits.</p>
+              <p style="font-size: 0.9rem; color: #6b7280; margin-top: 1rem;">
+              <a href="https://github.com/Nickbaka/Advanced-Password-Strength-Assessment-Tool" target="_blank" rel="noopener">Full Documentation (Download)</a>
+              </p>
           </div>
         </div>
 
-        <!-- Secure File Transfer Tool Project -->
+        <!-- DBS -->
         <div class="project">
-          <div class="project-header" onclick="toggleProject('file-transfer')">
-            <span>Secure File Transfer Tool</span>
-            <span class="toggle-icon" id="toggle-file-transfer">+</span>
+          <div class="project-header" onclick="toggleProject('database-security')">
+            <span>Comprehensive Database Security Implementation for AIS</span>
+            <span class="toggle-icon" id="toggle-database-security">+</span>
           </div>
-          <div class="project-content" id="file-transfer-content">
-            <p>Built using AES encryption for secure file transfers between peers.</p>
-            <h3>Key Features:</h3>
+          <div class="project-content" id="database-security-content">
+            <p>Designed and implemented a secure, layered architecture for the Academic Information System (AIS) database to protect sensitive student and staff data.</p>
+            <h3>Objective:</h3>
+            <p>Enhance the security posture of the AIS database, safeguarding sensitive information through access control, encryption, monitoring, and recovery.</p>
+            <h3>Key Components:</h3>
             <ul>
-              <li>End-to-end encryption using AES-256</li>
-              <li>Secure key exchange protocol</li>
-              <li>File integrity verification</li>
-              <li>Transfer resumption capabilities</li>
-              <li>User-friendly interface for non-technical users</li>
+              <li><strong>User Role Management & Permissions:</strong> Developed RBAC policies and tailored permissions for roles like Administrators, Students, and Lecturers.</li>
+              <li><strong>Data Classification & Protection:</strong> Categorized data and applied encryption (symmetric and transparent) for confidentiality.</li>
+              <li><strong>Activity Monitoring & Auditing:</strong> Used triggers and stored procedures to log critical actions and maintain comprehensive audit logs.</li>
+              <li><strong>Backup & Recovery:</strong> Automated backups and ensured reliable recovery strategies to minimize data loss and downtime.</li>
+              <li><strong>Security Enhancements:</strong> Implemented password policies, monitored suspicious activity, and reinforced the CIA triad (confidentiality, integrity, availability).</li>
             </ul>
-            <h3>Technologies Used:</h3>
-            <ul>
-              <li>Java</li>
-              <li>JavaFX for the user interface</li>
-              <li>Java Cryptography Extension (JCE)</li>
-            </ul>
+            <h3>Outcome:</h3>
+            <p>A secure, compliant, and resilient AIS database capable of preventing breaches and maintaining data integrity through role-based and policy-driven security controls.</p>
+              <p style="font-size: 0.9rem; color: #6b7280; margin-top: 1rem;">
+              <a href="https://github.com/Nickbaka/Database-security" target="_blank" rel="noopener">Full Documentation (Download)</a>
+              </p>
           </div>
         </div>
 
